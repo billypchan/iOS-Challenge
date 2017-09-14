@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0895FE19F928B12C76C79D2A /* AlbumPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E06106F469734ACA970FE4F /* AlbumPresenter.swift */; };
+		1D6ED73F1CFC45A2B8777AC0 /* AlbumModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F24090D3B6785C09DFC169 /* AlbumModuleInput.swift */; };
+		1D8A8AAA41DB639D7C789E0E /* AlbumInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124DA9E9D9E3A7658D0D93BA /* AlbumInitializer.swift */; };
+		1DA57BD29F158FF8F3DFCA6E /* AlbumViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF6FCD014A15C02E23F0B1 /* AlbumViewInput.swift */; };
+		36623B14AE16A875F74E4FF5 /* AlbumRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CA87D6BBA99C3A427AA7EA /* AlbumRouterTests.swift */; };
 		3FF6F9581EC5FCDF0076A8FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF6F9571EC5FCDF0076A8FB /* main.m */; };
 		3FF6F95B1EC5FCDF0076A8FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF6F95A1EC5FCDF0076A8FB /* AppDelegate.m */; };
 		3FF6F9641EC5FCDF0076A8FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF6F9621EC5FCDF0076A8FB /* Main.storyboard */; };
@@ -16,7 +21,19 @@
 		3FF6F9811EC5FF290076A8FB /* FeedCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF6F9801EC5FF290076A8FB /* FeedCollectionViewController.m */; };
 		3FF6F9851EC5FF8D0076A8FB /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF6F9841EC5FF8D0076A8FB /* CollectionCell.m */; };
 		3FF6F9891EC5FFB30076A8FB /* FlickrApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF6F9881EC5FFB30076A8FB /* FlickrApi.m */; };
+		4F115815F207ACA7FAF9EDE0 /* AlbumInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431ED77F3B0D7E0F66792776 /* AlbumInteractorInput.swift */; };
+		50F27343A3681ED5BC499C25 /* AlbumRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA45D7B0E368915C2FD3742 /* AlbumRouterInput.swift */; };
+		5FC5163BCAA962B732F090D6 /* AlbumViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B68179647D7D0AEE26190 /* AlbumViewOutput.swift */; };
+		6B74E908021D0B4A53F1A956 /* AlbumViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E544C77B468C28AB0BD9F510 /* AlbumViewTests.swift */; };
+		7A0D8BFDD5889094469A8804 /* AlbumConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284C4B3745A0A6DE9AE7B3B /* AlbumConfigurator.swift */; };
+		940FFCDD8775A5FE3FC2E6B8 /* AlbumInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C85A57EE6792729672AB24 /* AlbumInteractorTests.swift */; };
+		9E3A626C2BEB57C2E5260445 /* AlbumRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8141EC025DEC3DFE05F4DA /* AlbumRouter.swift */; };
+		B004628598C75B9B81798D29 /* AlbumPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C2BB5F2C7086BDE80A805 /* AlbumPresenterTests.swift */; };
+		D0BECFA1474346854B173048 /* AlbumConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230833DE5E9C8112DFCC012 /* AlbumConfiguratorTests.swift */; };
+		D58FBC5B5A42C70F1DCF4516 /* AlbumInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A09574AE09ABDDACBF68441 /* AlbumInteractor.swift */; };
+		E440F08B12BCC2799FD0E87D /* AlbumInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E83A991D2333CB3F9D07F2 /* AlbumInteractorOutput.swift */; };
 		EB14EFD7E30FD97450D680CD /* libPods-Coon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D54F95814687E6138DF70DCA /* libPods-Coon.a */; };
+		F82A0D1C64895E9C1B0076C9 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E1083EB4CE6E8E5E053605 /* AlbumViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +48,9 @@
 
 /* Begin PBXFileReference section */
 		07F2DE70800337A3218D4ED2 /* Pods-Coon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coon/Pods-Coon.release.xcconfig"; sourceTree = "<group>"; };
+		124DA9E9D9E3A7658D0D93BA /* AlbumInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumInitializer.swift; sourceTree = "<group>"; };
+		1EA45D7B0E368915C2FD3742 /* AlbumRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumRouterInput.swift; sourceTree = "<group>"; };
+		3A09574AE09ABDDACBF68441 /* AlbumInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumInteractor.swift; sourceTree = "<group>"; };
 		3FF6F9531EC5FCDF0076A8FB /* Coon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF6F9571EC5FCDF0076A8FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3FF6F9591EC5FCDF0076A8FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -48,8 +68,22 @@
 		3FF6F9841EC5FF8D0076A8FB /* CollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
 		3FF6F9871EC5FFB30076A8FB /* FlickrApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrApi.h; sourceTree = "<group>"; };
 		3FF6F9881EC5FFB30076A8FB /* FlickrApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrApi.m; sourceTree = "<group>"; };
+		431ED77F3B0D7E0F66792776 /* AlbumInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumInteractorInput.swift; sourceTree = "<group>"; };
+		4E06106F469734ACA970FE4F /* AlbumPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumPresenter.swift; sourceTree = "<group>"; };
+		5284C4B3745A0A6DE9AE7B3B /* AlbumConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumConfigurator.swift; sourceTree = "<group>"; };
+		58E83A991D2333CB3F9D07F2 /* AlbumInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumInteractorOutput.swift; sourceTree = "<group>"; };
 		5FF5C3E2DC23959DFF7961BD /* Pods-Coon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Coon/Pods-Coon.debug.xcconfig"; sourceTree = "<group>"; };
+		6F5B68179647D7D0AEE26190 /* AlbumViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumViewOutput.swift; sourceTree = "<group>"; };
+		81C85A57EE6792729672AB24 /* AlbumInteractorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumInteractorTests.swift; sourceTree = "<group>"; };
+		A230833DE5E9C8112DFCC012 /* AlbumConfiguratorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumConfiguratorTests.swift; sourceTree = "<group>"; };
+		C0F24090D3B6785C09DFC169 /* AlbumModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumModuleInput.swift; sourceTree = "<group>"; };
 		D54F95814687E6138DF70DCA /* libPods-Coon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Coon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7E1083EB4CE6E8E5E053605 /* AlbumViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		DB8141EC025DEC3DFE05F4DA /* AlbumRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumRouter.swift; sourceTree = "<group>"; };
+		E4CA87D6BBA99C3A427AA7EA /* AlbumRouterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumRouterTests.swift; sourceTree = "<group>"; };
+		E544C77B468C28AB0BD9F510 /* AlbumViewTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumViewTests.swift; sourceTree = "<group>"; };
+		E57C2BB5F2C7086BDE80A805 /* AlbumPresenterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumPresenterTests.swift; sourceTree = "<group>"; };
+		F1FF6FCD014A15C02E23F0B1 /* AlbumViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumViewInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +105,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FE98D9F0DFD556B5D8CFE80 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				431ED77F3B0D7E0F66792776 /* AlbumInteractorInput.swift */,
+				58E83A991D2333CB3F9D07F2 /* AlbumInteractorOutput.swift */,
+				3A09574AE09ABDDACBF68441 /* AlbumInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		31292520D81577C68EB380C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F1FF6FCD014A15C02E23F0B1 /* AlbumViewInput.swift */,
+				6F5B68179647D7D0AEE26190 /* AlbumViewOutput.swift */,
+				D7E1083EB4CE6E8E5E053605 /* AlbumViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3FF6F94A1EC5FCDF0076A8FB = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +133,7 @@
 				3FF6F9541EC5FCDF0076A8FB /* Products */,
 				B8D81FF126621D871A1DB29C /* Pods */,
 				FB6A05FBC927EEAEF4F3344B /* Frameworks */,
+				40EECA73EDCEBC62423D96AE /* modules */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +176,7 @@
 			children = (
 				3FF6F9731EC5FCDF0076A8FB /* CoonTests.m */,
 				3FF6F9751EC5FCDF0076A8FB /* Info.plist */,
+				770D07D4E9909376A9990D32 /* Album */,
 			);
 			path = CoonTests;
 			sourceTree = "<group>";
@@ -152,6 +208,80 @@
 			path = NetworkAPI;
 			sourceTree = "<group>";
 		};
+		40EECA73EDCEBC62423D96AE /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				A6D2C4204A537C0BC7075AD9 /* Album */,
+			);
+			path = modules;
+			sourceTree = "<group>";
+		};
+		610E672D0D115290981DB9F9 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E4CA87D6BBA99C3A427AA7EA /* AlbumRouterTests.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		6E78CEFE64011DE19508F666 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				1EA45D7B0E368915C2FD3742 /* AlbumRouterInput.swift */,
+				DB8141EC025DEC3DFE05F4DA /* AlbumRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		6F0F422C1728C36043B5C62A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				81C85A57EE6792729672AB24 /* AlbumInteractorTests.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		770D07D4E9909376A9990D32 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				CE0A4A8FC362EB3F96ABE90A /* Configurator */,
+				883DBDDEA4C70D141353C191 /* View */,
+				6F0F422C1728C36043B5C62A /* Interactor */,
+				F5BE2218649FDA8A70616463 /* Presenter */,
+				610E672D0D115290981DB9F9 /* Router */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
+		883DBDDEA4C70D141353C191 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E544C77B468C28AB0BD9F510 /* AlbumViewTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A6D2C4204A537C0BC7075AD9 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				31292520D81577C68EB380C5 /* View */,
+				D5BE8ACC328A508104AB157A /* Presenter */,
+				1FE98D9F0DFD556B5D8CFE80 /* Interactor */,
+				6E78CEFE64011DE19508F666 /* Router */,
+				B192E30B5F6A5FE9470FBC5C /* Configurator */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
+		B192E30B5F6A5FE9470FBC5C /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				5284C4B3745A0A6DE9AE7B3B /* AlbumConfigurator.swift */,
+				124DA9E9D9E3A7658D0D93BA /* AlbumInitializer.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
 		B8D81FF126621D871A1DB29C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +289,31 @@
 				07F2DE70800337A3218D4ED2 /* Pods-Coon.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE0A4A8FC362EB3F96ABE90A /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				A230833DE5E9C8112DFCC012 /* AlbumConfiguratorTests.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		D5BE8ACC328A508104AB157A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C0F24090D3B6785C09DFC169 /* AlbumModuleInput.swift */,
+				4E06106F469734ACA970FE4F /* AlbumPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F5BE2218649FDA8A70616463 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E57C2BB5F2C7086BDE80A805 /* AlbumPresenterTests.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		FB6A05FBC927EEAEF4F3344B /* Frameworks */ = {
@@ -306,13 +461,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Coon-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -327,6 +485,18 @@
 				3FF6F9891EC5FFB30076A8FB /* FlickrApi.m in Sources */,
 				3FF6F9581EC5FCDF0076A8FB /* main.m in Sources */,
 				3FF6F9851EC5FF8D0076A8FB /* CollectionCell.m in Sources */,
+				1DA57BD29F158FF8F3DFCA6E /* AlbumViewInput.swift in Sources */,
+				5FC5163BCAA962B732F090D6 /* AlbumViewOutput.swift in Sources */,
+				F82A0D1C64895E9C1B0076C9 /* AlbumViewController.swift in Sources */,
+				1D6ED73F1CFC45A2B8777AC0 /* AlbumModuleInput.swift in Sources */,
+				0895FE19F928B12C76C79D2A /* AlbumPresenter.swift in Sources */,
+				4F115815F207ACA7FAF9EDE0 /* AlbumInteractorInput.swift in Sources */,
+				E440F08B12BCC2799FD0E87D /* AlbumInteractorOutput.swift in Sources */,
+				D58FBC5B5A42C70F1DCF4516 /* AlbumInteractor.swift in Sources */,
+				50F27343A3681ED5BC499C25 /* AlbumRouterInput.swift in Sources */,
+				9E3A626C2BEB57C2E5260445 /* AlbumRouter.swift in Sources */,
+				7A0D8BFDD5889094469A8804 /* AlbumConfigurator.swift in Sources */,
+				1D8A8AAA41DB639D7C789E0E /* AlbumInitializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +505,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FF6F9741EC5FCDF0076A8FB /* CoonTests.m in Sources */,
+				D0BECFA1474346854B173048 /* AlbumConfiguratorTests.swift in Sources */,
+				6B74E908021D0B4A53F1A956 /* AlbumViewTests.swift in Sources */,
+				940FFCDD8775A5FE3FC2E6B8 /* AlbumInteractorTests.swift in Sources */,
+				B004628598C75B9B81798D29 /* AlbumPresenterTests.swift in Sources */,
+				36623B14AE16A875F74E4FF5 /* AlbumRouterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +587,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -452,6 +628,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
