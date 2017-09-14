@@ -9,5 +9,5 @@
 import Foundation
 
 protocol AlbumInteractorInput {
-
+    func retrieveImageURLs()
 }

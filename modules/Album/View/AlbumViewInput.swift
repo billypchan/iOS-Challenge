@@ -5,6 +5,7 @@
 //  Created by Bill, Chan Yiu Por on 14/09/2017.
 //  Copyright © 2017 com.billchan. All rights reserved.
 //
+import Foundation
 
 protocol AlbumViewInput: class {
 
@@ -14,4 +15,12 @@ protocol AlbumViewInput: class {
     */
 
     func setupInitialState()
+
+    // PRESENTER -> VIEW
+    func showImageURLs(imageURLs :[URL])
+    func showImageURLAdded(url :URL)
+    
+    func showLoading()
+    func hideLoading()
+    func showError()
 }
