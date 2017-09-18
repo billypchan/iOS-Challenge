@@ -9,7 +9,7 @@ target 'Coon' do
   pod 'FlickrKit'
   pod 'AFNetworking'
 
-  pod 'SDWebImage'
+pod 'SDWebImage' ###FIXME: AFNetworking with img cache?
 
   target 'CoonTests' do
     inherit! :search_paths

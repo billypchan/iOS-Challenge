@@ -8,6 +8,9 @@
 
 import XCTest
 
+@testable import Coon
+
+
 class AlbumModuleConfiguratorTests: XCTestCase {
 
     override func setUp() {

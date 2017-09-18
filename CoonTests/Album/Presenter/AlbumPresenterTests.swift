@@ -8,6 +8,8 @@
 
 import XCTest
 
+@testable import Coon
+
 class AlbumPresenterTest: XCTestCase {
 
     override func setUp() {

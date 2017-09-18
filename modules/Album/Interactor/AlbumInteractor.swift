@@ -10,7 +10,7 @@ class AlbumInteractor: AlbumInteractorInput {
     
     weak var output: AlbumInteractorOutput!
     
-    ///FIXME:
+    ///FIXME: return a struct instead of URL
     func retrieveImageURLs() {
         
         FlickrApi.fetchPhotos(completion: {urls, error in

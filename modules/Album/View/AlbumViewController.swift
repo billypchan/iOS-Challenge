@@ -8,14 +8,17 @@
 
 import UIKit
 
-class AlbumViewController: UICollectionViewController {
+
+class AlbumViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var output: AlbumViewOutput!
+    ///FIXME: save state,
     var imageURLs = [URL]()
     
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         output.viewIsReady()
     }
 
@@ -28,7 +31,9 @@ class AlbumViewController: UICollectionViewController {
 extension AlbumViewController: AlbumViewInput {
     func showImageURLs(imageURLs: [URL]) {
         self.imageURLs = imageURLs
-        collectionView?.reloadData()
+        DispatchQueue.main.async {
+            self.collectionView?.reloadData()
+        }
     }
     
     func showImageURLAdded(url: URL) {
@@ -56,6 +61,14 @@ extension AlbumViewController: AlbumViewInput {
 
 /** Collection view */
 extension AlbumViewController {
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        let size = self.view.frame.size.width
+        return CGSize(width: size, height: size)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageURLs.count
     }

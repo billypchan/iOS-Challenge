@@ -23,6 +23,7 @@
         if (response) {
             photoURLs = [NSMutableArray array];
             for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
+                ///FIXME: title
                 NSURL *url = [fk photoURLForSize:FKPhotoSizeSmall240 fromPhotoDictionary:photoData];
                 [photoURLs addObject:url];
             }

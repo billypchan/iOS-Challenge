@@ -9,13 +9,11 @@
 /* Begin PBXBuildFile section */
 		0895FE19F928B12C76C79D2A /* AlbumPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E06106F469734ACA970FE4F /* AlbumPresenter.swift */; };
 		1D6ED73F1CFC45A2B8777AC0 /* AlbumModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F24090D3B6785C09DFC169 /* AlbumModuleInput.swift */; };
-		1D8A8AAA41DB639D7C789E0E /* AlbumInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124DA9E9D9E3A7658D0D93BA /* AlbumInitializer.swift */; };
 		1DA57BD29F158FF8F3DFCA6E /* AlbumViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF6FCD014A15C02E23F0B1 /* AlbumViewInput.swift */; };
 		36623B14AE16A875F74E4FF5 /* AlbumRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CA87D6BBA99C3A427AA7EA /* AlbumRouterTests.swift */; };
 		3FF6F9641EC5FCDF0076A8FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF6F9621EC5FCDF0076A8FB /* Main.storyboard */; };
 		3FF6F9661EC5FCDF0076A8FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF6F9651EC5FCDF0076A8FB /* Assets.xcassets */; };
 		3FF6F9691EC5FCDF0076A8FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF6F9671EC5FCDF0076A8FB /* LaunchScreen.storyboard */; };
-		3FF6F9741EC5FCDF0076A8FB /* CoonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF6F9731EC5FCDF0076A8FB /* CoonTests.m */; };
 		3FF6F9851EC5FF8D0076A8FB /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF6F9841EC5FF8D0076A8FB /* CollectionCell.m */; };
 		40C76ED276140AAA6601130C /* Pods_CoonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDE1DEB7C882CBC3C2F79BE /* Pods_CoonTests.framework */; };
 		424B304E8391CCC1DBC7AA7D /* Pods_Coon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3312A7C1C81EB0A993537950 /* Pods_Coon.framework */; };
@@ -24,9 +22,7 @@
 		5FC5163BCAA962B732F090D6 /* AlbumViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5B68179647D7D0AEE26190 /* AlbumViewOutput.swift */; };
 		6B74E908021D0B4A53F1A956 /* AlbumViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E544C77B468C28AB0BD9F510 /* AlbumViewTests.swift */; };
 		7A0D8BFDD5889094469A8804 /* AlbumConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5284C4B3745A0A6DE9AE7B3B /* AlbumConfigurator.swift */; };
-		940FFCDD8775A5FE3FC2E6B8 /* AlbumInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C85A57EE6792729672AB24 /* AlbumInteractorTests.swift */; };
 		9E3A626C2BEB57C2E5260445 /* AlbumRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8141EC025DEC3DFE05F4DA /* AlbumRouter.swift */; };
-		B004628598C75B9B81798D29 /* AlbumPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C2BB5F2C7086BDE80A805 /* AlbumPresenterTests.swift */; };
 		D0BECFA1474346854B173048 /* AlbumConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230833DE5E9C8112DFCC012 /* AlbumConfiguratorTests.swift */; };
 		D58FBC5B5A42C70F1DCF4516 /* AlbumInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A09574AE09ABDDACBF68441 /* AlbumInteractor.swift */; };
 		E440F08B12BCC2799FD0E87D /* AlbumInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E83A991D2333CB3F9D07F2 /* AlbumInteractorOutput.swift */; };
@@ -82,7 +78,7 @@
 		F1FF6FCD014A15C02E23F0B1 /* AlbumViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumViewInput.swift; sourceTree = "<group>"; };
 		FE51B2871F6AF1FA00B1D059 /* FlickrApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrApi.h; sourceTree = "<group>"; };
 		FE51B2881F6AF1FA00B1D059 /* FlickrApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickrApi.m; sourceTree = "<group>"; };
-		FE51B2891F6AF23200B1D059 /* Coon_bridging_header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Coon_bridging_header.h; path = Coon/Coon_bridging_header.h; sourceTree = "<group>"; };
+		FE51B2891F6AF23200B1D059 /* Coon_bridging_header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coon_bridging_header.h; sourceTree = "<group>"; };
 		FE51B28A1F6AF2D500B1D059 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		FED4B5A31F6AFE980023A136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,7 +127,6 @@
 		3FF6F94A1EC5FCDF0076A8FB = {
 			isa = PBXGroup;
 			children = (
-				FE51B2891F6AF23200B1D059 /* Coon_bridging_header.h */,
 				3FF6F9551EC5FCDF0076A8FB /* Coon */,
 				3FF6F9721EC5FCDF0076A8FB /* CoonTests */,
 				3FF6F9541EC5FCDF0076A8FB /* Products */,
@@ -168,6 +163,7 @@
 		3FF6F9561EC5FCDF0076A8FB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FE51B2891F6AF23200B1D059 /* Coon_bridging_header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -549,7 +545,6 @@
 				9E3A626C2BEB57C2E5260445 /* AlbumRouter.swift in Sources */,
 				7A0D8BFDD5889094469A8804 /* AlbumConfigurator.swift in Sources */,
 				FED4B5A41F6AFE980023A136 /* AppDelegate.swift in Sources */,
-				1D8A8AAA41DB639D7C789E0E /* AlbumInitializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,11 +552,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FF6F9741EC5FCDF0076A8FB /* CoonTests.m in Sources */,
 				D0BECFA1474346854B173048 /* AlbumConfiguratorTests.swift in Sources */,
 				6B74E908021D0B4A53F1A956 /* AlbumViewTests.swift in Sources */,
-				940FFCDD8775A5FE3FC2E6B8 /* AlbumInteractorTests.swift in Sources */,
-				B004628598C75B9B81798D29 /* AlbumPresenterTests.swift in Sources */,
 				36623B14AE16A875F74E4FF5 /* AlbumRouterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -700,6 +692,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coon.Coon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = Coon/Coon_bridging_header.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -715,6 +708,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coon.Coon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = Coon/Coon_bridging_header.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Release;
 		};
@@ -727,6 +721,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coon.CoonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coon.app/Coon";
 			};
 			name = Debug;
@@ -740,6 +735,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coon.CoonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coon.app/Coon";
 			};
 			name = Release;
