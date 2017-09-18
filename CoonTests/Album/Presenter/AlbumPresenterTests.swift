@@ -24,6 +24,7 @@ class AlbumPresenterTest: XCTestCase {
     
     class MockViewController: AlbumViewInput {
         var urls = [URL]()
+        var isError = false
         
         func showImageURLs(imageURLs: [URL]) {
             self.urls = imageURLs
@@ -38,13 +39,27 @@ class AlbumPresenterTest: XCTestCase {
         }
         
         func showError() {
-            
+            isError = true
         }
         
         
         func setupInitialState() {
             
         }
+    }
+
+    func testPresenterOnError_expectOnErrorCalls() {
+        let viewController = MockViewController()
+
+        let presenter = AlbumPresenter()
+        presenter.view = viewController
+
+        let interactor = MockInteractor()
+        interactor.output = presenter
+        
+        interactor.output?.onError()
+
+        XCTAssert(viewController.isError, "Presenter forwords error form intactor to view")
     }
     
     func testPresenter_expectListHas2Items() {

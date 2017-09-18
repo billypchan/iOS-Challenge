@@ -13,10 +13,6 @@ import UIKit
 class CollectionCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     func set(imageURL: URL?) {
-        if imageURL == nil {
-            imageView.image = nil
-            return
-        }        
         // Load the image using SDWebImage
         imageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "placeHolder"))
     }

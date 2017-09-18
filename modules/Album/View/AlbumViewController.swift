@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import PKHUD
 
 class AlbumViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
@@ -37,8 +37,7 @@ extension AlbumViewController: AlbumViewInput {
     }
     
     func showError() {
-        ///FIXME:
-//        HUD.flash(.label("Internet not connected"), delay: 2.0)
+        HUD.flash(.label("Error occurs"), onView: self.view, delay: 2.0)
     }
     
     func showLoading() {
