@@ -8,6 +8,8 @@
 
 import XCTest
 
+@testable import Coon
+
 class AlbumRouterTests: XCTestCase {
 
     override func setUp() {
@@ -18,5 +20,12 @@ class AlbumRouterTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+    }
+    
+    func testRouter_expectAlbumViewControllerIsCreated(){
+    let album = AlbumRouter.createAlbumModule()
+
+        XCTAssertTrue(album.childViewControllers.first is AlbumViewController, "router created AlbumViewController")
+
     }
 }

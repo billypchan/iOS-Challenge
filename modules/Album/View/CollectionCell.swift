@@ -16,8 +16,7 @@ class CollectionCell: UICollectionViewCell {
         if imageURL == nil {
             imageView.image = nil
             return
-        }
-        
+        }        
         // Load the image using SDWebImage
         imageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "placeHolder"))
     }

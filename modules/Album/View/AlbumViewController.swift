@@ -42,11 +42,15 @@ extension AlbumViewController: AlbumViewInput {
     }
     
     func showLoading() {
+        DispatchQueue.main.async {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        }
     }
     
     func hideLoading() {
+        DispatchQueue.main.async {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }
     }
 }
 
