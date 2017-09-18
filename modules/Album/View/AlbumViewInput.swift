@@ -1,5 +1,5 @@
 //
-//  AlbumAlbumViewInput.swift
+//  AlbumViewInput.swift
 //  CoonApp-iOS
 //
 //  Created by Bill, Chan Yiu Por on 14/09/2017.
@@ -18,7 +18,6 @@ protocol AlbumViewInput: class {
 
     // PRESENTER -> VIEW
     func showImageURLs(imageURLs :[URL])
-    func showImageURLAdded(url :URL)
     
     func showLoading()
     func hideLoading()

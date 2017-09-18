@@ -1,5 +1,5 @@
 //
-//  AlbumAlbumViewController.swift
+//  AlbumViewController.swift
 //  CoonApp-iOS
 //
 //  Created by Bill, Chan Yiu Por on 14/09/2017.
@@ -36,26 +36,17 @@ extension AlbumViewController: AlbumViewInput {
         }
     }
     
-    func showImageURLAdded(url: URL) {
-        if !self.imageURLs.contains(url) {
-            self.imageURLs.insert(url, at: self.imageURLs.count)
-            collectionView?.reloadData()
-        }
-    }
-    
     func showError() {
         ///FIXME:
 //        HUD.flash(.label("Internet not connected"), delay: 2.0)
     }
     
     func showLoading() {
-        ///FIXME:
-//        HUD.show(.progress)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
     func hideLoading() {
-        ///FIXME:
-//        HUD.hide()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 }
 

@@ -14,7 +14,6 @@
 		3FF6F9641EC5FCDF0076A8FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF6F9621EC5FCDF0076A8FB /* Main.storyboard */; };
 		3FF6F9661EC5FCDF0076A8FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF6F9651EC5FCDF0076A8FB /* Assets.xcassets */; };
 		3FF6F9691EC5FCDF0076A8FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF6F9671EC5FCDF0076A8FB /* LaunchScreen.storyboard */; };
-		3FF6F9851EC5FF8D0076A8FB /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF6F9841EC5FF8D0076A8FB /* CollectionCell.m */; };
 		40C76ED276140AAA6601130C /* Pods_CoonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDE1DEB7C882CBC3C2F79BE /* Pods_CoonTests.framework */; };
 		424B304E8391CCC1DBC7AA7D /* Pods_Coon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3312A7C1C81EB0A993537950 /* Pods_Coon.framework */; };
 		4F115815F207ACA7FAF9EDE0 /* AlbumInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431ED77F3B0D7E0F66792776 /* AlbumInteractorInput.swift */; };
@@ -55,10 +54,7 @@
 		3FF6F9681EC5FCDF0076A8FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FF6F96A1EC5FCDF0076A8FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FF6F96F1EC5FCDF0076A8FB /* CoonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3FF6F9731EC5FCDF0076A8FB /* CoonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoonTests.m; sourceTree = "<group>"; };
 		3FF6F9751EC5FCDF0076A8FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3FF6F9831EC5FF8D0076A8FB /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
-		3FF6F9841EC5FF8D0076A8FB /* CollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
 		431ED77F3B0D7E0F66792776 /* AlbumInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumInteractorInput.swift; sourceTree = "<group>"; };
 		4BDE1DEB7C882CBC3C2F79BE /* Pods_CoonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E06106F469734ACA970FE4F /* AlbumPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumPresenter.swift; sourceTree = "<group>"; };
@@ -150,7 +146,6 @@
 			children = (
 				FED4B5A31F6AFE980023A136 /* AppDelegate.swift */,
 				3FF6F9861EC5FF9F0076A8FB /* NetworkAPI */,
-				3FF6F9821EC5FF750076A8FB /* Cells */,
 				3FF6F9621EC5FCDF0076A8FB /* Main.storyboard */,
 				3FF6F9651EC5FCDF0076A8FB /* Assets.xcassets */,
 				3FF6F9671EC5FCDF0076A8FB /* LaunchScreen.storyboard */,
@@ -171,20 +166,10 @@
 		3FF6F9721EC5FCDF0076A8FB /* CoonTests */ = {
 			isa = PBXGroup;
 			children = (
-				3FF6F9731EC5FCDF0076A8FB /* CoonTests.m */,
 				3FF6F9751EC5FCDF0076A8FB /* Info.plist */,
 				770D07D4E9909376A9990D32 /* Album */,
 			);
 			path = CoonTests;
-			sourceTree = "<group>";
-		};
-		3FF6F9821EC5FF750076A8FB /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				3FF6F9831EC5FF8D0076A8FB /* CollectionCell.h */,
-				3FF6F9841EC5FF8D0076A8FB /* CollectionCell.m */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		3FF6F9861EC5FF9F0076A8FB /* NetworkAPI */ = {
@@ -531,7 +516,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE51B28B1F6AF2D500B1D059 /* CollectionCell.swift in Sources */,
-				3FF6F9851EC5FF8D0076A8FB /* CollectionCell.m in Sources */,
 				1DA57BD29F158FF8F3DFCA6E /* AlbumViewInput.swift in Sources */,
 				5FC5163BCAA962B732F090D6 /* AlbumViewOutput.swift in Sources */,
 				F82A0D1C64895E9C1B0076C9 /* AlbumViewController.swift in Sources */,

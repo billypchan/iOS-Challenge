@@ -1,5 +1,5 @@
 //
-//  AlbumAlbumRouter.swift
+//  AlbumRouter.swift
 //  CoonApp-iOS
 //
 //  Created by Bill, Chan Yiu Por on 14/09/2017.
