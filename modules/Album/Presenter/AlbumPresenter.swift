@@ -25,15 +25,6 @@ extension AlbumPresenter: AlbumInteractorOutput {
         view?.showImageURLs(imageURLs: imageURLs)
     }
     
-    func didRetrieveImageURL(_ url: URL) {
-        view?.hideLoading()
-        view?.showImageURLAdded(url: url)
-    }
-    
-    func didFinishUpload() {
-        view?.hideLoading()
-    }
-    
     func onError() {
         view?.hideLoading()
         view?.showError()

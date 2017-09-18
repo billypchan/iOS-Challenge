@@ -7,7 +7,6 @@
 //
 
 import XCTest
-
 @testable import Coon
 
 class AlbumInteractorTests: XCTestCase {
@@ -22,7 +21,22 @@ class AlbumInteractorTests: XCTestCase {
         super.tearDown()
     }
 
-    class MockPresenter: AlbumInteractorOutput {
-
+    func testInteractorRetrieveImageURLs_expectURLIsRetrived() {
+        let presenter = MockPresenter()
+        
+        let interactor = AlbumInteractor()
+        interactor.output = presenter
+        
+        interactor.retrieveImageURLs()
+        
+        let expect = expectation(description: "receive urls operation")
+        
+        let deadlineTime = DispatchTime.now() + .seconds(5)
+        DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+            XCTAssert(presenter.urls.count > 0, "Retrieved URLs")
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 60)
     }
 }

@@ -37,25 +37,6 @@ class AlbumViewTests: XCTestCase {
         
     }
     
-    class MockPresenter: AlbumModuleInput, AlbumViewOutput, AlbumInteractorOutput {
-        weak var view: AlbumViewInput!
-        var interactor: AlbumInteractorInput!
-        var router: AlbumRouterInput!
-        
-        func viewIsReady() {
-            interactor?.retrieveImageURLs()
-            view.showLoading()
-        }
-        
-        func onError() {
-            view.showError()
-        }
-        
-        func didRetrieveImageURLs(_ imageURLs: [URL]) {
-            view?.showImageURLs(imageURLs: imageURLs)
-            view.hideLoading()
-        }
-    }
 
     func testView_expectCreate2DummyRows() {
         let viewController = AlbumViewController()
