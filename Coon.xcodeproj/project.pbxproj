@@ -28,6 +28,8 @@
 		F82A0D1C64895E9C1B0076C9 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E1083EB4CE6E8E5E053605 /* AlbumViewController.swift */; };
 		FE1FF8761F70041A001AA192 /* MockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1FF8751F70041A001AA192 /* MockPresenter.swift */; };
 		FE1FF8781F7004F8001AA192 /* AlbumInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C85A57EE6792729672AB24 /* AlbumInteractorTests.swift */; };
+		FE1FF8791F700894001AA192 /* AlbumPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C2BB5F2C7086BDE80A805 /* AlbumPresenterTests.swift */; };
+		FE1FF87B1F7008CC001AA192 /* MockInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1FF87A1F7008CC001AA192 /* MockInteractor.swift */; };
 		FE51B28B1F6AF2D500B1D059 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51B28A1F6AF2D500B1D059 /* CollectionCell.swift */; };
 		FED4B5A41F6AFE980023A136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED4B5A31F6AFE980023A136 /* AppDelegate.swift */; };
 		FED4B5DF1F6B0D530023A136 /* FlickrApi.m in Sources */ = {isa = PBXBuildFile; fileRef = FE51B2881F6AF1FA00B1D059 /* FlickrApi.m */; };
@@ -75,6 +77,7 @@
 		E947BA119A777FF2679BCED5 /* Pods-CoonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoonTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoonTests/Pods-CoonTests.release.xcconfig"; sourceTree = "<group>"; };
 		F1FF6FCD014A15C02E23F0B1 /* AlbumViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumViewInput.swift; sourceTree = "<group>"; };
 		FE1FF8751F70041A001AA192 /* MockPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenter.swift; sourceTree = "<group>"; };
+		FE1FF87A1F7008CC001AA192 /* MockInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInteractor.swift; sourceTree = "<group>"; };
 		FE51B2871F6AF1FA00B1D059 /* FlickrApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrApi.h; sourceTree = "<group>"; };
 		FE51B2881F6AF1FA00B1D059 /* FlickrApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickrApi.m; sourceTree = "<group>"; };
 		FE51B2891F6AF23200B1D059 /* Coon_bridging_header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coon_bridging_header.h; sourceTree = "<group>"; };
@@ -308,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				FE1FF8751F70041A001AA192 /* MockPresenter.swift */,
+				FE1FF87A1F7008CC001AA192 /* MockInteractor.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -552,7 +556,9 @@
 				D0BECFA1474346854B173048 /* AlbumConfiguratorTests.swift in Sources */,
 				FE1FF8781F7004F8001AA192 /* AlbumInteractorTests.swift in Sources */,
 				6B74E908021D0B4A53F1A956 /* AlbumViewTests.swift in Sources */,
+				FE1FF8791F700894001AA192 /* AlbumPresenterTests.swift in Sources */,
 				36623B14AE16A875F74E4FF5 /* AlbumRouterTests.swift in Sources */,
+				FE1FF87B1F7008CC001AA192 /* MockInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

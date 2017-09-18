@@ -20,23 +20,7 @@ class AlbumViewTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-    }
-
-    class MockInteractor: AlbumInteractorInput {
-        weak var output: AlbumInteractorOutput?
-
-        func retrieveImageURLs() {
-            let url1 = URL(string:"http://localhost")!
-            let url2 = URL(string:"http://localhost")!
-
-            
-            let urls = [url1, url2]
-            
-            self.output?.didRetrieveImageURLs(urls)
-        }
-        
-    }
-    
+    }    
 
     func testView_expectCreate2DummyRows() {
         let viewController = AlbumViewController()
