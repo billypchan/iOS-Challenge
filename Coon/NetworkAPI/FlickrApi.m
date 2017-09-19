@@ -6,6 +6,7 @@
 #import "FlickrApi.h"
 #import <UIKit/UIKit.h>
 #import <FlickrKit/FlickrKit.h>
+#import <Coon-Swift.h>
 
 @implementation FlickrApi
 
@@ -19,17 +20,20 @@
     interesting.page = @"1";
     
     [fk call:interesting completion:^(NSDictionary *response, NSError *error) {
-        NSMutableArray *photoURLs = nil;
+        NSMutableArray *photoItems = nil;
         if (response) {
-            photoURLs = [NSMutableArray array];
+            photoItems = [NSMutableArray array];
             for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
                 ///FIXME: title
                 NSURL *url = [fk photoURLForSize:FKPhotoSizeSmall240 fromPhotoDictionary:photoData];
-                [photoURLs addObject:url];
+                NSString * title = photoData[@"title"];
+                
+                PhotoEntity * photo = [[PhotoEntity alloc] initWithTitle:title url:url];
+                [photoItems addObject:photo];
             }
         }
         if (completion) {
-            completion(photoURLs, error);
+            completion(photoItems, error);
         }
     }];
 }

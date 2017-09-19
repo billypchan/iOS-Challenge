@@ -11,9 +11,14 @@ import SDWebImage
 import UIKit
 
 class CollectionCell: UICollectionViewCell {
+    
     @IBOutlet weak var imageView: UIImageView!
-    func set(imageURL: URL?) {
+    @IBOutlet weak var labelTitle: UILabel!
+    
+    func set(photo: PhotoEntity?) {
         // Load the image using SDWebImage
-        imageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "placeHolder"))
+        imageView.sd_setImage(with: photo?.url, placeholderImage: UIImage(named: "placeHolder"))
+
+        labelTitle.text = photo?.title
     }
 }

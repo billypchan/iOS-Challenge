@@ -14,11 +14,11 @@ class MockPresenter: AlbumModuleInput, AlbumViewOutput, AlbumInteractorOutput {
     var interactor: AlbumInteractorInput!
     var router: AlbumRouterInput!
 
-    var urls = [URL]()
+    var Photos = [PhotoEntity]()
     var isError = false
 
     func viewIsReady() {
-        interactor?.retrieveImageURLs()
+        interactor?.retrievePhotos()
         view?.showLoading()
     }
     
@@ -27,10 +27,10 @@ class MockPresenter: AlbumModuleInput, AlbumViewOutput, AlbumInteractorOutput {
         isError = true
     }
     
-    func didRetrieveImageURLs(_ imageURLs: [URL]) {
-        self.urls =  imageURLs
+    func didRetrievePhotos(_ Photos: [PhotoEntity]) {
+        self.Photos =  Photos
 
-        view?.showImageURLs(imageURLs: imageURLs)
+        view?.showPhotos(Photos: Photos)
         view?.hideLoading()
     }
 }

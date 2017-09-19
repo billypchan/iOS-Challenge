@@ -23,11 +23,11 @@ class AlbumPresenterTest: XCTestCase {
     }
     
     class MockViewController: AlbumViewInput {
-        var urls = [URL]()
+        var Photos = [PhotoEntity]()
         var isError = false
         
-        func showImageURLs(imageURLs: [URL]) {
-            self.urls = imageURLs
+        func showPhotos(Photos: [PhotoEntity]) {
+            self.Photos = Photos
         }
         
         func showLoading() {
@@ -75,9 +75,9 @@ class AlbumPresenterTest: XCTestCase {
         
         presenter.viewIsReady()
         
-        let count = viewController.urls.count
+        let count = viewController.Photos.count
         
-        XCTAssert(count == 2, "got 2 urls")
+        XCTAssert(count == 2, "got 2 Photos")
     }
     
 }

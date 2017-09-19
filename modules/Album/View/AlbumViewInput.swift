@@ -17,7 +17,7 @@ protocol AlbumViewInput: class {
     func setupInitialState()
 
     // PRESENTER -> VIEW
-    func showImageURLs(imageURLs :[URL])
+    func showPhotos(Photos :[PhotoEntity])
     
     func showLoading()
     func hideLoading()

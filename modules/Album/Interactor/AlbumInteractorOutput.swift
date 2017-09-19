@@ -10,7 +10,7 @@ import Foundation
 
 protocol AlbumInteractorOutput: class {
     // INTERACTOR -> PRESENTER
-    func didRetrieveImageURLs(_ imageURLs: [URL])
+    func didRetrievePhotos(_ Photos: [PhotoEntity])
     
     func onError()
 }

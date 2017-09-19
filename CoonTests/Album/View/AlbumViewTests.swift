@@ -36,7 +36,7 @@ class AlbumViewTests: XCTestCase {
         presenter.onError()
         
         
-        let expect = expectation(description: "receive urls operation")
+        let expect = expectation(description: "receive Photos operation")
         
         let deadlineTime = DispatchTime.now() + .seconds(0)
         DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
@@ -48,7 +48,7 @@ class AlbumViewTests: XCTestCase {
                     isHUDfound = true
                 }
             }
-            XCTAssert(isHUDfound == true, "Retrieved URLs")
+            XCTAssert(isHUDfound == true, "Retrieved Photos")
             expect.fulfill()
         }
         

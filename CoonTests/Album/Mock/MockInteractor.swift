@@ -12,14 +12,14 @@ import Foundation
 class MockInteractor: AlbumInteractorInput {
     weak var output: AlbumInteractorOutput?
     
-    func retrieveImageURLs() {
+    func retrievePhotos() {
         let url1 = URL(string:"http://localhost")!
         let url2 = URL(string:"http://localhost")!
         
         
-        let urls = [url1, url2]
+        let Photos = [url1, url2]
         
-        self.output?.didRetrieveImageURLs(urls)
+        self.output?.didRetrievePhotos(Photos)
     }
     
 }

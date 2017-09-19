@@ -13,10 +13,13 @@ class AlbumViewController: UICollectionViewController, UICollectionViewDelegateF
 
     var output: AlbumViewOutput!
     ///FIXME: save state,
-    var imageURLs = [URL]()
+    var Photos = [PhotoEntity]()
     
-    lazy var cellSize : CGFloat = {
+    lazy var cellWidth : CGFloat = {
         return self.view.frame.size.width
+    }()
+    lazy var cellHeight : CGFloat = {
+        return self.view.frame.size.width * 1.2
     }()
 
     // MARK: Life cycle
@@ -34,8 +37,8 @@ class AlbumViewController: UICollectionViewController, UICollectionViewDelegateF
 }
 
 extension AlbumViewController: AlbumViewInput {
-    func showImageURLs(imageURLs: [URL]) {
-        self.imageURLs = imageURLs
+    func showPhotos(Photos: [PhotoEntity]) {
+        self.Photos = Photos
         DispatchQueue.main.async {
             self.collectionView?.reloadData()
         }
@@ -63,24 +66,24 @@ extension AlbumViewController {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        return CGSize(width: cellSize, height: cellSize)
+        return CGSize(width: cellWidth, height: cellHeight)
     }
     
-    /* more footer space for last page */
+    /* footer space for last page can scroll align to top edge*/
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: cellSize, height: self.view.frame.size.height - cellSize)
+        return CGSize(width: cellWidth, height: self.view.frame.size.height - cellHeight)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageURLs.count
+        return Photos.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionCell ///FIXME: rename to CollectionCell
         
-        let url = imageURLs[indexPath.row]
+        let photo = Photos[indexPath.row]
         
-        cell.set(imageURL: url)
+        cell.set(photo: photo)
         
         return cell
     }
@@ -89,6 +92,7 @@ extension AlbumViewController {
 /* paging */
 extension AlbumViewController {
     
+    /* In case the user scrolls for a long swipe, the scroll view should animate to the nearest page when the scrollview decelerated. */
     override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         scrollToPage(scrollView, withVelocity: CGPoint(x:0, y:0))
     }
@@ -98,7 +102,6 @@ extension AlbumViewController {
     }
     
     func scrollToPage(_ scrollView: UIScrollView, withVelocity velocity: CGPoint) {
-        let cellHeight: CGFloat = cellSize
         let cellPadding: CGFloat = 10
         /* padding for status bar*/
         let topPadding: CGFloat = 20

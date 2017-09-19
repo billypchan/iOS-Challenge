@@ -15,14 +15,14 @@ class AlbumPresenter: AlbumModuleInput, AlbumViewOutput {
     var router: AlbumRouterInput!
 
     func viewIsReady() {
-        interactor?.retrieveImageURLs()
+        interactor?.retrievePhotos()
     }
 }
 
 extension AlbumPresenter: AlbumInteractorOutput {
-    func didRetrieveImageURLs(_ imageURLs: [URL]) {
+    func didRetrievePhotos(_ Photos: [PhotoEntity]) {
         view?.hideLoading()
-        view?.showImageURLs(imageURLs: imageURLs)
+        view?.showPhotos(Photos: Photos)
     }
     
     func onError() {

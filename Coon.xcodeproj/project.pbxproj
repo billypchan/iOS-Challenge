@@ -32,6 +32,7 @@
 		FE1FF87C1F700A18001AA192 /* AlbumRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CA87D6BBA99C3A427AA7EA /* AlbumRouterTests.swift */; };
 		FE1FF8841F700E4E001AA192 /* CoonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1FF8831F700E4E001AA192 /* CoonUITests.swift */; };
 		FE51B28B1F6AF2D500B1D059 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51B28A1F6AF2D500B1D059 /* CollectionCell.swift */; };
+		FE92B9611F7170350021D71F /* PhotoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92B9601F7170350021D71F /* PhotoEntity.swift */; };
 		FEA8465B1F70956C003FEA9A /* stub.txt in Resources */ = {isa = PBXBuildFile; fileRef = FEA8465A1F70956C003FEA9A /* stub.txt */; };
 		FED4B5A41F6AFE980023A136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED4B5A31F6AFE980023A136 /* AppDelegate.swift */; };
 		FED4B5DF1F6B0D530023A136 /* FlickrApi.m in Sources */ = {isa = PBXBuildFile; fileRef = FE51B2881F6AF1FA00B1D059 /* FlickrApi.m */; };
@@ -94,6 +95,7 @@
 		FE51B2881F6AF1FA00B1D059 /* FlickrApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickrApi.m; sourceTree = "<group>"; };
 		FE51B2891F6AF23200B1D059 /* Coon_bridging_header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coon_bridging_header.h; sourceTree = "<group>"; };
 		FE51B28A1F6AF2D500B1D059 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		FE92B9601F7170350021D71F /* PhotoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEntity.swift; sourceTree = "<group>"; };
 		FEA8465A1F70956C003FEA9A /* stub.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = stub.txt; sourceTree = "<group>"; };
 		FED4B5A31F6AFE980023A136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,6 +215,7 @@
 		40EECA73EDCEBC62423D96AE /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				FE92B95F1F71701C0021D71F /* Model */,
 				A6D2C4204A537C0BC7075AD9 /* Album */,
 			);
 			path = modules;
@@ -346,6 +349,14 @@
 				FE1FF8851F700E4E001AA192 /* Info.plist */,
 			);
 			path = CoonUITests;
+			sourceTree = "<group>";
+		};
+		FE92B95F1F71701C0021D71F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE92B9601F7170350021D71F /* PhotoEntity.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -514,7 +525,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Coon/Pods-Coon-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/FlickrKit/FlickrKit.framework",
-				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
@@ -522,7 +532,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlickrKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
@@ -552,9 +561,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CoonTests/Pods-CoonTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -604,6 +616,7 @@
 				FE51B28B1F6AF2D500B1D059 /* CollectionCell.swift in Sources */,
 				1DA57BD29F158FF8F3DFCA6E /* AlbumViewInput.swift in Sources */,
 				5FC5163BCAA962B732F090D6 /* AlbumViewOutput.swift in Sources */,
+				FE92B9611F7170350021D71F /* PhotoEntity.swift in Sources */,
 				F82A0D1C64895E9C1B0076C9 /* AlbumViewController.swift in Sources */,
 				1D6ED73F1CFC45A2B8777AC0 /* AlbumModuleInput.swift in Sources */,
 				0895FE19F928B12C76C79D2A /* AlbumPresenter.swift in Sources */,

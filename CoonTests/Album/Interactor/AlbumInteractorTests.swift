@@ -42,7 +42,7 @@ class AlbumInteractorTests: XCTestCase {
         let interactor = AlbumInteractor()
         interactor.output = presenter
         
-        interactor.retrieveImageURLs()
+        interactor.retrievePhotos()
 
         let expect = expectation(description: "operation")
         
@@ -56,19 +56,19 @@ class AlbumInteractorTests: XCTestCase {
 
     }
 
-    func testInteractorRetrieveImageURLs_expectURLIsRetrived() {
+    func testInteractorRetrievePhotos_expectURLIsRetrived() {
         let presenter = MockPresenter()
         
         let interactor = AlbumInteractor()
         interactor.output = presenter
         
-        interactor.retrieveImageURLs()
+        interactor.retrievePhotos()
         
-        let expect = expectation(description: "receive urls operation")
+        let expect = expectation(description: "receive Photos operation")
         
         let deadlineTime = DispatchTime.now() + .seconds(5)
         DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
-            XCTAssert(presenter.urls.count > 0, "Retrieved URLs")
+            XCTAssert(presenter.Photos.count > 0, "Retrieved Photos")
             expect.fulfill()
         }
         
