@@ -14,13 +14,13 @@ class AlbumInteractor: AlbumInteractorInput {
     func retrieveImageURLs() {
         
         FlickrApi.fetchPhotos(completion: {urls, error in
-            print("result \(String(describing: urls)) error \(String(describing: error))")
             
             if let downcastedURLs = urls as? [URL] {
                 self.output.didRetrieveImageURLs(downcastedURLs)
             }
             else {
                 self.output.onError() ///FIXME: reason
+                print("error \(String(describing: error))")
             }
         })
     }

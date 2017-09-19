@@ -15,6 +15,10 @@ class AlbumViewController: UICollectionViewController, UICollectionViewDelegateF
     ///FIXME: save state,
     var imageURLs = [URL]()
     
+    lazy var cellSize : CGFloat = {
+        return self.view.frame.size.width
+    }()
+
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,11 +61,14 @@ extension AlbumViewController: AlbumViewInput {
 /** Collection view */
 extension AlbumViewController {
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        let size = self.view.frame.size.width
-        return CGSize(width: size, height: size)
+        return CGSize(width: cellSize, height: cellSize)
+    }
+    
+    /* more footer space for last page */
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: cellSize, height: self.view.frame.size.height - cellSize)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -76,5 +83,36 @@ extension AlbumViewController {
         cell.set(imageURL: url)
         
         return cell
+    }
+}
+
+/* paging */
+extension AlbumViewController {
+    
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        scrollToPage(scrollView, withVelocity: CGPoint(x:0, y:0))
+    }
+    
+    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        scrollToPage(scrollView, withVelocity: velocity)
+    }
+    
+    func scrollToPage(_ scrollView: UIScrollView, withVelocity velocity: CGPoint) {
+        let cellHeight: CGFloat = cellSize
+        let cellPadding: CGFloat = 10
+        /* padding for status bar*/
+        let topPadding: CGFloat = 20
+
+        var page: Int = Int((scrollView.contentOffset.y - cellHeight / 2) / (cellHeight + cellPadding) + 1)
+        if velocity.y > 0 {
+            page += 1
+        }
+        if velocity.y < 0 {
+            page -= 1
+        }
+        page = max(page, 0)
+        let newOffset: CGFloat = CGFloat(page) * (cellHeight + cellPadding) - topPadding
+        
+        scrollView.setContentOffset(CGPoint(x:0, y:newOffset), animated: true)
     }
 }
