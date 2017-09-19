@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 protocol AlbumRouterInput {
-    static func createAlbumModule() -> UIViewController
+    static func createModule() -> UIViewController
 }

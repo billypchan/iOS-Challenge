@@ -23,7 +23,7 @@ class AlbumRouterTests: XCTestCase {
     }
     
     func testRouter_expectAlbumViewControllerIsCreated(){
-    let album = AlbumRouter.createAlbumModule()
+    let album = AlbumRouter.createModule()
 
         XCTAssertTrue(album.childViewControllers.first is AlbumViewController, "router created AlbumViewController")
 

@@ -44,7 +44,6 @@ class AlbumViewTests: XCTestCase {
             
             var isHUDfound = false
             allSubviews.forEach { subview in
-                print(subview.accessibilityIdentifier)
                 if subview.accessibilityIdentifier == "PKHUD" {
                     isHUDfound = true
                 }

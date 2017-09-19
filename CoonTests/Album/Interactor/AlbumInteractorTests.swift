@@ -24,14 +24,14 @@ class AlbumInteractorTests: XCTestCase {
         OHHTTPStubs.removeAllStubs()
     }
     
-    var stub: OHHTTPStubsDescriptor?
+    var stubNoConnection: OHHTTPStubsDescriptor?
     
     func testStubLostConnection_expectMockPresenterSetIsErrorFlag() {
-        stub = stub(condition: isHost("api.flickr.com")) { _ in
+        stubNoConnection = stub(condition: isHost("api.flickr.com")) { _ in
             let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.cfurlErrorNotConnectedToInternet.rawValue), userInfo:nil)
             return OHHTTPStubsResponse(error:notConnectedError)
         }
-        stub?.name = "no connection stub"
+        stubNoConnection?.name = "no connection stub"
         
         OHHTTPStubs.onStubActivation { (request: URLRequest, stub: OHHTTPStubsDescriptor, response: OHHTTPStubsResponse) in
             print("[OHHTTPStubs] Request to \(request.url!) has been stubbed with \(String(describing: stub.name))")

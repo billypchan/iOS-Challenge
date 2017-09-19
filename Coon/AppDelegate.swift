@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         // Override point for customization after application launch.
-        let album = AlbumRouter.createAlbumModule()
+        let album = AlbumRouter.createModule()
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = album
