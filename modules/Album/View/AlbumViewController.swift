@@ -25,6 +25,7 @@ class AlbumViewController: UICollectionViewController, UICollectionViewDelegateF
 
     // MARK: AlbumViewInput
     func setupInitialState() {
+        ///FIXME: state restore
     }
 }
 

@@ -12,6 +12,9 @@ target 'Coon' do
 pod 'SDWebImage' ###FIXME: AFNetworking with img cache?
 pod 'PKHUD', :git => 'https://github.com/pkluz/PKHUD.git', :branch => 'release/swift4'
 
+pod 'OHHTTPStubs/Swift' # includes the Default subspec, with support for NSURLSession & JSON, and the Swiftier API wrappers
+
+
   target 'CoonTests' do
     inherit! :search_paths
     # Pods for testing

@@ -15,6 +15,7 @@ class MockPresenter: AlbumModuleInput, AlbumViewOutput, AlbumInteractorOutput {
     var router: AlbumRouterInput!
 
     var urls = [URL]()
+    var isError = false
 
     func viewIsReady() {
         interactor?.retrieveImageURLs()
@@ -23,6 +24,7 @@ class MockPresenter: AlbumModuleInput, AlbumViewOutput, AlbumInteractorOutput {
     
     func onError() {
         view?.showError()
+        isError = true
     }
     
     func didRetrieveImageURLs(_ imageURLs: [URL]) {

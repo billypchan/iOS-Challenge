@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import Coon
+import OHHTTPStubs
 
 class AlbumInteractorTests: XCTestCase {
 
@@ -19,6 +20,40 @@ class AlbumInteractorTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+        
+        OHHTTPStubs.removeAllStubs()
+    }
+    
+    var stub: OHHTTPStubsDescriptor?
+    
+    func testStubLostConnection_expectMockPresenterSetIsErrorFlag() {
+        stub = stub(condition: isHost("api.flickr.com")) { _ in
+            let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.cfurlErrorNotConnectedToInternet.rawValue), userInfo:nil)
+            return OHHTTPStubsResponse(error:notConnectedError)
+        }
+        stub?.name = "no connection stub"
+        
+        OHHTTPStubs.onStubActivation { (request: URLRequest, stub: OHHTTPStubsDescriptor, response: OHHTTPStubsResponse) in
+            print("[OHHTTPStubs] Request to \(request.url!) has been stubbed with \(String(describing: stub.name))")
+        }
+        
+        let presenter = MockPresenter()
+        
+        let interactor = AlbumInteractor()
+        interactor.output = presenter
+        
+        interactor.retrieveImageURLs()
+
+        let expect = expectation(description: "operation")
+        
+        let deadlineTime = DispatchTime.now() + .seconds(10)
+        DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+            XCTAssert(presenter.isError, "Got Error")
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 60)
+
     }
 
     func testInteractorRetrieveImageURLs_expectURLIsRetrived() {
