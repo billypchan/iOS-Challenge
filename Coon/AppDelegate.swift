@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - UIStateRestoration
+    
+    /* You want to do the initial root view controller creation in willFinishLaunchingWithOptions in the app delegate as that is called before state restoration takes place. */
     func application(_ application: UIApplication,
                               willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         if ProcessInfo.processInfo.environment["XCInjectBundleInto"] != nil {

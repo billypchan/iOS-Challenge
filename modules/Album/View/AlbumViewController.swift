@@ -88,7 +88,7 @@ extension AlbumViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionCell ///FIXME: rename to CollectionCell
         
-        cell.set(photo: photos[indexPath.item])
+        cell.set(photo: photos[indexPath.item], parentViewController: self)
         
         return cell
     }
