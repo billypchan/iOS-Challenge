@@ -23,6 +23,14 @@ class AlbumViewController: UICollectionViewController, UICollectionViewDelegateF
         return self.view.frame.size.width * 1.2
     }()
     
+    var isStatusBarHidden:Bool = false{
+        didSet{
+            UIView.animate(withDuration: 0.5) { () -> Void in
+                self.setNeedsStatusBarAppearanceUpdate()
+            }
+        }
+    }
+
     /// State restoration values.
     enum RestorationKeys : String {
         case collectionViewDataSourcePhotos
@@ -152,6 +160,20 @@ extension AlbumViewController {
         if let storedValue = coder.decodeObject(forKey: RestorationKeys.collectionViewDataSourcePhotos.rawValue) as? [PhotoEntity] {
             photos = storedValue
         }
+    }
+}
+
+extension AlbumViewController {
+    func setStatusBarHidden(isHidden: Bool) {
+        isStatusBarHidden = isHidden
+    }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
+        return .slide
+    }
+    
+    override var prefersStatusBarHidden: Bool{
+        return isStatusBarHidden
     }
 }
 
