@@ -23,7 +23,26 @@ import Foundation
         super.init()
     }
     
+    required init(coder aDecoder: NSCoder) {
+        title  = (aDecoder.decodeObject(forKey: "title") as? String) ?? ""
+        if let urlDecoded = aDecoder.decodeObject(forKey: "url") as? URL {
+            url = urlDecoded
+        }
+        else {
+            url = NSURLComponents().url!
+        }
+    }
+
     override open var description : String {
         return "\(title) <\(url)>"
+    }
+    
+}
+
+extension PhotoEntity : NSCoding {
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(title, forKey: "title")
+        aCoder.encode(url, forKey: "url")
     }
 }

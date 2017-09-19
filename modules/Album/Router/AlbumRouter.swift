@@ -10,7 +10,7 @@ import UIKit
 
 class AlbumRouter: AlbumRouterInput {
     class func createModule() -> UIViewController {
-        let tabController = mainStoryboard.instantiateViewController(withIdentifier: "AlbumTabViewController")
+        let tabController = mainStoryboard.instantiateViewController(withIdentifier: "AlbumTabViewControllerID")
         if let view = tabController.childViewControllers.first as? AlbumViewInput {
             let configurator = AlbumModuleConfigurator()
             

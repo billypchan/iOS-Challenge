@@ -12,33 +12,40 @@ import PKHUD
 class AlbumViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var output: AlbumViewOutput!
-    ///FIXME: save state,
-    var Photos = [PhotoEntity]()
-    
+
+    var photos = [PhotoEntity]()
+
     lazy var cellWidth : CGFloat = {
         return self.view.frame.size.width
     }()
+    
     lazy var cellHeight : CGFloat = {
         return self.view.frame.size.width * 1.2
     }()
+    
+    /// State restoration values.
+    enum RestorationKeys : String {
+        case collectionViewDataSourcePhotos
+    }
 
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         output.viewIsReady()
     }
 
 
     // MARK: AlbumViewInput
     func setupInitialState() {
-        ///FIXME: state restore
     }
+    
 }
 
 extension AlbumViewController: AlbumViewInput {
     func showPhotos(Photos: [PhotoEntity]) {
-        self.Photos = Photos
+        self.photos = Photos
+
         DispatchQueue.main.async {
             self.collectionView?.reloadData()
         }
@@ -75,21 +82,19 @@ extension AlbumViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Photos.count
+            return photos.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionCell ///FIXME: rename to CollectionCell
         
-        let photo = Photos[indexPath.row]
-        
-        cell.set(photo: photo)
+        cell.set(photo: photos[indexPath.item])
         
         return cell
     }
 }
 
-/* paging */
+// MARK: - paging
 extension AlbumViewController {
     
     /* In case the user scrolls for a long swipe, the scroll view should animate to the nearest page when the scrollview decelerated. */
@@ -119,3 +124,34 @@ extension AlbumViewController {
         scrollView.setContentOffset(CGPoint(x:0, y:newOffset), animated: true)
     }
 }
+
+// MARK: - UIStateRestoration
+
+extension AlbumViewController {
+    override func applicationFinishedRestoringState() {
+        print("finished restoring")
+        collectionView?.reloadData()
+    }
+    
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+        
+        // Encode the view state so it can be restored later.
+        
+        // Encode the collection view data source.
+        coder.encode(photos, forKey:RestorationKeys.collectionViewDataSourcePhotos.rawValue)
+        print("finished encodeRestorableState")
+    }
+    
+    override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
+        
+        // Restore the active state:
+        
+        // Restore the collection view data source.
+        if let storedValue = coder.decodeObject(forKey: RestorationKeys.collectionViewDataSourcePhotos.rawValue) as? [PhotoEntity] {
+            photos = storedValue
+        }
+    }
+}
+
