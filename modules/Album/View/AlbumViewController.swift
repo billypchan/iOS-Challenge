@@ -227,22 +227,26 @@ extension AlbumViewController: FullScreenProtocol {
         ///TODO: animation, scale and translate
         self.view.addSubview(newImageView)
         self.navigationController?.isNavigationBarHidden = true
-        self.tabBarController?.tabBar.isHidden = true
         
+        newImageView.alpha = 0
         UIView.animate(withDuration: kFullScreenAnimationTime) {[unowned self] () -> Void in
             self.setStatusBarHidden(isHidden: true)
+            newImageView.alpha = 1
         }
         self.setTabBarVisible(visible: false, animated: true, completion: nil)
     }
     
     func dismissFullscreenImage(sender: UITapGestureRecognizer) {
         self.navigationController?.isNavigationBarHidden = false
-        self.tabBarController?.tabBar.isHidden = false
-        sender.view?.removeFromSuperview()
         
-        UIView.animate(withDuration: kFullScreenAnimationTime) {[unowned self] () -> Void in
-            self.setStatusBarHidden(isHidden: false)
-        }
+        UIView.animate(withDuration: kFullScreenAnimationTime,
+                       animations: {[unowned self] () -> Void in
+                        self.setStatusBarHidden(isHidden: false)
+                        sender.view?.alpha = 0
+            }, completion: { _ in
+                sender.view?.removeFromSuperview()
+        })
+        
         self.setTabBarVisible(visible: true, animated: true, completion: nil)
     }
     
