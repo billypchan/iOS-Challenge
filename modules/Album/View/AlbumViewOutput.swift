@@ -14,4 +14,12 @@ protocol AlbumViewOutput {
     */
 
     func viewIsReady()
+
+    /**
+     @author Bill, Chan Yiu Por
+     Notify presenter to refresh data
+     */
+
+    func refresh()
+    
 }

@@ -85,4 +85,16 @@ class CoonUITests: XCTestCase {
         XCTAssertTrue(originalCount > 0, "loaded some cells")
     }
 
+    /*
+    func testStoreRestoration_expectedCodeCoverageShowsEncodeRestorableStateWorks() {
+        
+        XCUIDevice().press(XCUIDevice.Button.home)
+        
+        sleep(20)
+        
+        XCUIApplication().launch()
+
+        XCTAssertTrue(true, "check EncodeRestorableState() is called in code coverage report")
+    }
+ */
 }

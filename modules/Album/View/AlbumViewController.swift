@@ -11,6 +11,8 @@ import PKHUD
 
 class AlbumViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    var refresher : UIRefreshControl!
+    
     let kFullScreenAnimationTime = 0.3
     
     var output: AlbumViewOutput?
@@ -42,7 +44,20 @@ class AlbumViewController: UICollectionViewController, UICollectionViewDelegateF
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addRefreshControl()
+        
         output?.viewIsReady()
+    }
+    
+    func addRefreshControl() {
+        self.refresher = UIRefreshControl()
+        self.collectionView!.alwaysBounceVertical = true
+        self.refresher.addTarget(self, action: #selector(AlbumViewController.refresh), for: .valueChanged)
+        self.collectionView!.addSubview(refresher)
+    }
+    
+    @objc func refresh(){
+        output?.refresh()
     }
     
     
@@ -58,11 +73,13 @@ extension AlbumViewController: AlbumViewInput {
         
         DispatchQueue.main.async {
             self.collectionView?.reloadData()
+            self.refresher.endRefreshing()
         }
     }
     
     func showError() {
         HUD.flash(.label("Error occurs"), onView: self.view, delay: 2.0)
+        refresher.endRefreshing()
     }
     
     func showLoading() {

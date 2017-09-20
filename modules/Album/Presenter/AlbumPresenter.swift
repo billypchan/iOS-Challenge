@@ -8,12 +8,17 @@
 
 import Foundation
 
-class AlbumPresenter: AlbumModuleInput, AlbumViewOutput {
-
+class AlbumPresenter: AlbumModuleInput {
     weak var view: AlbumViewInput!
     var interactor: AlbumInteractorInput!
     var router: AlbumRouterInput!
+}
 
+extension AlbumPresenter: AlbumViewOutput {
+    func refresh() {
+        interactor?.retrievePhotos()
+    }
+    
     func viewIsReady() {
         interactor?.retrievePhotos()
     }
