@@ -79,7 +79,7 @@ extension AlbumViewController: AlbumViewInput {
     
     func showError() {
         HUD.flash(.label("Error occurs"), onView: self.view, delay: 2.0)
-        refresher.endRefreshing()
+        refresher?.endRefreshing()
     }
     
     func showLoading() {

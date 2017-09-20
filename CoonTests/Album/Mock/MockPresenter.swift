@@ -33,4 +33,8 @@ class MockPresenter: AlbumModuleInput, AlbumViewOutput, AlbumInteractorOutput {
         view?.showPhotos(Photos: Photos)
         view?.hideLoading()
     }
+    
+    func refresh() {
+        interactor?.retrievePhotos()
+    }
 }
