@@ -53,7 +53,6 @@ class AlbumInteractorTests: XCTestCase {
         }
         
         waitForExpectations(timeout: 60)
-
     }
 
     func testInteractorRetrievePhotos_expectURLIsRetrived() {

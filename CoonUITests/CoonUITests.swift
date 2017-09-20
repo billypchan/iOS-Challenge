@@ -47,11 +47,31 @@ class CoonUITests: XCTestCase {
            firstCell.images.element(boundBy: 0).forceTap()
         }
         
-        let label = app.images["FullScreenImage"]
-        let exists = NSPredicate(format: "exists == 1")
+        let image = app.images["FullScreenImage"]
+
+        var imageExists = false
+        if image.waitForExistence(timeout: 2) {
+            imageExists = true
+            image.forceTap()
+        }
+
+        let expect = expectation(description: "operation")
         
-        expectation(for: exists, evaluatedWith: label, handler: nil)
-        waitForExpectations(timeout: 5, handler: nil)
+        let deadlineTime = DispatchTime.now() + .seconds(3)
+        DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+            
+            let image = app.images["FullScreenImage"]
+            if !image.waitForExistence(timeout: 2) {
+                XCTAssertTrue(imageExists, "Full screen image toggles")
+            }
+            else {
+                XCTAssert(false, "Full screen image not disappear!")
+            }
+
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 60)
     }
     
     func testLoadView_expectNumberOfCellMoreThenOne() {
