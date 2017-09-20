@@ -13,7 +13,7 @@ class AlbumViewController: UICollectionViewController, UICollectionViewDelegateF
     
     let kFullScreenAnimationTime = 0.3
     
-    var output: AlbumViewOutput!
+    var output: AlbumViewOutput?
     
     var photos = [PhotoEntity]()
     
@@ -42,7 +42,7 @@ class AlbumViewController: UICollectionViewController, UICollectionViewDelegateF
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        output.viewIsReady()
+        output?.viewIsReady()
     }
     
     
@@ -139,7 +139,6 @@ extension AlbumViewController {
 
 extension AlbumViewController {
     override func applicationFinishedRestoringState() {
-        print("finished restoring")
         collectionView?.reloadData()
     }
     
@@ -221,6 +220,7 @@ extension AlbumViewController: FullScreenProtocol {
         newImageView.backgroundColor = .black
         newImageView.contentMode = .scaleAspectFit
         newImageView.isUserInteractionEnabled = true
+        newImageView.accessibilityLabel = "FullScreenImage"
         let tap = UITapGestureRecognizer(target: self, action: #selector(FullScreenProtocol.dismissFullscreenImage(sender:)))
         newImageView.addGestureRecognizer(tap)
         

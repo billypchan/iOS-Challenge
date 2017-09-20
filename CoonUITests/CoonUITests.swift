@@ -8,6 +8,17 @@
 
 import XCTest
 
+extension XCUIElement {
+    func forceTap() {
+        if self.isHittable {
+            self.tap()
+        } else {
+            let coordinate: XCUICoordinate = self.coordinate(withNormalizedOffset: .zero)
+            coordinate.tap()
+        }
+    }
+}
+
 class CoonUITests: XCTestCase {
         
     override func setUp() {
@@ -26,6 +37,21 @@ class CoonUITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+    }
+    
+    func testFullScreen_expectTheFullScreenImageShowsAndDismisses(){
+        let app = XCUIApplication()
+        let firstCell = XCUIApplication().cells.element(boundBy: 0)
+
+        if firstCell.waitForExistence(timeout: 10) {
+           firstCell.images.element(boundBy: 0).forceTap()
+        }
+        
+        let label = app.images["FullScreenImage"]
+        let exists = NSPredicate(format: "exists == 1")
+        
+        expectation(for: exists, evaluatedWith: label, handler: nil)
+        waitForExpectations(timeout: 5, handler: nil)
     }
     
     func testLoadView_expectNumberOfCellMoreThenOne() {
