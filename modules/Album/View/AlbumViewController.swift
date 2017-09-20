@@ -10,11 +10,13 @@ import UIKit
 import PKHUD
 
 class AlbumViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-
+    
+    let kFullScreenAnimationTime = 0.3
+    
     var output: AlbumViewOutput!
-
+    
     var photos = [PhotoEntity]()
-
+    
     lazy var cellWidth : CGFloat = {
         return self.view.frame.size.width
     }()
@@ -30,20 +32,20 @@ class AlbumViewController: UICollectionViewController, UICollectionViewDelegateF
             }
         }
     }
-
+    
     /// State restoration values.
     enum RestorationKeys : String {
         case collectionViewDataSourcePhotos
     }
-
+    
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         output.viewIsReady()
     }
-
-
+    
+    
     // MARK: AlbumViewInput
     func setupInitialState() {
     }
@@ -53,7 +55,7 @@ class AlbumViewController: UICollectionViewController, UICollectionViewDelegateF
 extension AlbumViewController: AlbumViewInput {
     func showPhotos(Photos: [PhotoEntity]) {
         self.photos = Photos
-
+        
         DispatchQueue.main.async {
             self.collectionView?.reloadData()
         }
@@ -65,13 +67,13 @@ extension AlbumViewController: AlbumViewInput {
     
     func showLoading() {
         DispatchQueue.main.async {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
         }
     }
     
     func hideLoading() {
         DispatchQueue.main.async {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
 }
@@ -90,7 +92,7 @@ extension AlbumViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return photos.count
+        return photos.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -118,7 +120,7 @@ extension AlbumViewController {
         let cellPadding: CGFloat = 10
         /* padding for status bar*/
         let topPadding: CGFloat = 20
-
+        
         var page: Int = Int((scrollView.contentOffset.y - cellHeight / 2) / (cellHeight + cellPadding) + 1)
         if velocity.y > 0 {
             page += 1
@@ -163,6 +165,40 @@ extension AlbumViewController {
     }
 }
 
+/* tab bar hide/show animation */
+extension AlbumViewController {
+    // pass a param to describe the state change, an animated flag and a completion block matching UIView animations completion
+    func setTabBarVisible(visible: Bool, animated: Bool, completion: ((Bool)->Void)? = nil ) {
+        
+        // bail if the current state matches the desired state
+        if (tabBarIsVisible() == visible) {
+            if let completion = completion {
+                return completion(true)
+            }
+            else {
+                return
+            }
+        }
+        
+        // get a frame calculation ready
+        let height = tabBarController!.tabBar.frame.size.height
+        let offsetY = (visible ? -height : height)
+        
+        // zero duration means no animation
+        let duration = (animated ? kFullScreenAnimationTime : 0.0)
+        
+        UIView.animate(withDuration: duration, animations: {
+            let frame = self.tabBarController!.tabBar.frame
+            self.tabBarController!.tabBar.frame = frame.offsetBy(dx: 0, dy: offsetY)
+        }, completion:completion)
+    }
+    
+    func tabBarIsVisible() -> Bool {
+        return tabBarController!.tabBar.frame.origin.y < view.frame.maxY
+    }
+}
+
+/* status bar hide/show animation */
 extension AlbumViewController {
     func setStatusBarHidden(isHidden: Bool) {
         isStatusBarHidden = isHidden
@@ -177,3 +213,37 @@ extension AlbumViewController {
     }
 }
 
+extension AlbumViewController: FullScreenProtocol {
+    func showFullScreenImageWhenTapped(sender: UITapGestureRecognizer, image: UIImage) {
+        let imageView = sender.view as! UIImageView
+        let newImageView = UIImageView(image: imageView.image)
+        newImageView.frame = UIScreen.main.bounds
+        newImageView.backgroundColor = .black
+        newImageView.contentMode = .scaleAspectFit
+        newImageView.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(FullScreenProtocol.dismissFullscreenImage(sender:)))
+        newImageView.addGestureRecognizer(tap)
+        
+        ///TODO: animation, scale and translate
+        self.view.addSubview(newImageView)
+        self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+        
+        UIView.animate(withDuration: kFullScreenAnimationTime) {[unowned self] () -> Void in
+            self.setStatusBarHidden(isHidden: true)
+        }
+        self.setTabBarVisible(visible: false, animated: true, completion: nil)
+    }
+    
+    func dismissFullscreenImage(sender: UITapGestureRecognizer) {
+        self.navigationController?.isNavigationBarHidden = false
+        self.tabBarController?.tabBar.isHidden = false
+        sender.view?.removeFromSuperview()
+        
+        UIView.animate(withDuration: kFullScreenAnimationTime) {[unowned self] () -> Void in
+            self.setStatusBarHidden(isHidden: false)
+        }
+        self.setTabBarVisible(visible: true, animated: true, completion: nil)
+    }
+    
+}

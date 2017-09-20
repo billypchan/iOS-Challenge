@@ -17,7 +17,7 @@ class MockInteractor: AlbumInteractorInput {
         let url2 = URL(string:"http://localhost")!
         
         
-        let Photos = [url1, url2]
+        let Photos = [PhotoEntity(title:"title1", url:url1), PhotoEntity(title:"title2", url:url2)]
         
         self.output?.didRetrievePhotos(Photos)
     }

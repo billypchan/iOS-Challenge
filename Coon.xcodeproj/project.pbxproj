@@ -32,6 +32,7 @@
 		FE1FF87C1F700A18001AA192 /* AlbumRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CA87D6BBA99C3A427AA7EA /* AlbumRouterTests.swift */; };
 		FE1FF8841F700E4E001AA192 /* CoonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1FF8831F700E4E001AA192 /* CoonUITests.swift */; };
 		FE51B28B1F6AF2D500B1D059 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51B28A1F6AF2D500B1D059 /* CollectionCell.swift */; };
+		FE820A211F726A3E005B68D4 /* FullScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE820A201F726A3E005B68D4 /* FullScreenProtocol.swift */; };
 		FE92B9611F7170350021D71F /* PhotoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92B9601F7170350021D71F /* PhotoEntity.swift */; };
 		FEA8465B1F70956C003FEA9A /* stub.txt in Resources */ = {isa = PBXBuildFile; fileRef = FEA8465A1F70956C003FEA9A /* stub.txt */; };
 		FED4B5A41F6AFE980023A136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED4B5A31F6AFE980023A136 /* AppDelegate.swift */; };
@@ -95,6 +96,7 @@
 		FE51B2881F6AF1FA00B1D059 /* FlickrApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickrApi.m; sourceTree = "<group>"; };
 		FE51B2891F6AF23200B1D059 /* Coon_bridging_header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coon_bridging_header.h; sourceTree = "<group>"; };
 		FE51B28A1F6AF2D500B1D059 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		FE820A201F726A3E005B68D4 /* FullScreenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenProtocol.swift; sourceTree = "<group>"; };
 		FE92B9601F7170350021D71F /* PhotoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEntity.swift; sourceTree = "<group>"; };
 		FEA8465A1F70956C003FEA9A /* stub.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = stub.txt; sourceTree = "<group>"; };
 		FED4B5A31F6AFE980023A136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				F1FF6FCD014A15C02E23F0B1 /* AlbumViewInput.swift */,
 				6F5B68179647D7D0AEE26190 /* AlbumViewOutput.swift */,
 				D7E1083EB4CE6E8E5E053605 /* AlbumViewController.swift */,
+				FE820A201F726A3E005B68D4 /* FullScreenProtocol.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				1D6ED73F1CFC45A2B8777AC0 /* AlbumModuleInput.swift in Sources */,
 				0895FE19F928B12C76C79D2A /* AlbumPresenter.swift in Sources */,
 				4F115815F207ACA7FAF9EDE0 /* AlbumInteractorInput.swift in Sources */,
+				FE820A211F726A3E005B68D4 /* FullScreenProtocol.swift in Sources */,
 				E440F08B12BCC2799FD0E87D /* AlbumInteractorOutput.swift in Sources */,
 				D58FBC5B5A42C70F1DCF4516 /* AlbumInteractor.swift in Sources */,
 				50F27343A3681ED5BC499C25 /* AlbumRouterInput.swift in Sources */,
